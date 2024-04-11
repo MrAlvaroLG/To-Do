@@ -1,53 +1,33 @@
 .navigation_bar{
     display: flex;
-    margin-top: none;
-    font-size: 80px;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
     font-family: "Bebas Neue", sans-serif;
     border-bottom: 2px solid #ffffff ;
 }
-a{
-    color: #ffffff;
+
+#title{
+    width: 20%;
+    
+}
+
+#new_note{
+    margin-left: 100px;
+    margin-right: 100px;    
     text-decoration: none;
+    color: #ffffff;
 }
-#Title{
-    margin-left: 200px;
-}
-#New_note{
-    border-radius: 80px;
-    padding-left: 50px;
-    padding-right: 50px;
-    border: 2px solid #ffffff;
-    margin-left: 1000px;
+
+#calendar{
     margin-right: 100px;
+    text-decoration: none;
+    color: #ffffff;
 }
-#New_note:hover{
-    color: #09090B;
-    background-color: #ffffff;
-}
-#Calendar{
-    border-radius: 60px;
-    margin-left: 500px;
-}
-#Calendar:hover{
-    color: #09090B;
-    background-color: #ffffff;
-}
-.work_area{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2500px;
-}
-.left_bar{
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 550;
-    border: 2px solid #ffffff;
-}
-.right_bar{
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    border: 2px solid #ffffff;
+
+#user{
+    margin-left: auto;
+    justify-self: end;
+    text-decoration: none;
+    color: #ffffff;
 }
