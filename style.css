@@ -9,7 +9,6 @@
 
 #title{
     width: 20%;
-    
 }
 
 #new-note{
@@ -32,3 +31,19 @@
     color: #ffffff;
 }
 
+.work-area{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.left-bar{
+    width: 30%;
+    height: 100%;
+    border: 2px solid #ffffff;
+}
+
+.right-bar{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ffffff;
+}
