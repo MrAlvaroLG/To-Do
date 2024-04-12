@@ -46,14 +46,12 @@
     justify-content: center;
     margin-left: 7%;
     margin-right: 100px;
-    width: 10%;
     text-decoration: none;
     color: #ffffff;
 }
 
 #calendar:hover{
     border-radius: 10px;
-    border-left-width: 10%;
     background-color: #ffffff;
     color: #09090B;
 }
