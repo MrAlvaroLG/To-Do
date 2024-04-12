@@ -1,24 +1,39 @@
 .navigation_bar{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: row;
     width: 100%;
     font-family: "Bebas Neue", sans-serif;
     border-bottom: 2px solid #ffffff ;
 }
 
+.left-partof-navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
 #title{
-    width: 20%;
+    width: 100%;
+    margin-left: 10%;
+    justify-content: flex-start;
 }
 
 #new-note{
-    margin-left: 100px;
-    margin-right: 100px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    margin-right: 10%;
     text-decoration: none;
     color: #ffffff;
 }
 
 #calendar{
+    margin-left: 7%;
     margin-right: 100px;
     text-decoration: none;
     color: #ffffff;
@@ -32,18 +47,20 @@
 }
 
 .work-area{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-auto-rows: 100%;
     height: 100%;
 }
 .left-bar{
-    width: 30%;
     height: 100%;
     border: 2px solid #ffffff;
+    border-top: none;
 }
 
 .right-bar{
-    width: 100%;
     height: 100%;
     border: 2px solid #ffffff;
+    border-left: none;
+    border-top: none;
 }
