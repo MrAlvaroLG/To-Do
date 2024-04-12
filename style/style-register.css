@@ -12,13 +12,31 @@
     border: 2px solid #ffffff;
 }
 
-#log-image{
-    width: 20%;
+#title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-family: "Changa One", sans-serif;
+    width: 30%;
     height: 15%;
-    margin-top: 5%;
+    margin-top: 2.5%;
+    margin-bottom: none;
+}
+#description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-family: "Changa One", sans-serif;
+    margin-top: none;
+    width: 100%;
+
 }
 #username-text{
-    margin-top: 10%;
+    width: 50%;
+    justify-content: left;
+    margin-top: 15%;
     margin-bottom: 10px;
     font-size: 25px;
 }
@@ -33,6 +51,8 @@
     border-bottom: 2px solid #ffffff;
 }
 #password-text{
+    width: 50%;
+    justify-content: left;
     margin-top: 10%;
     font-size: 25px;
     margin-bottom: 10px;
