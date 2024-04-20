@@ -10,14 +10,17 @@
     <div class="login-card">
         <div id="title">To-Do</div>
         <div id="description">Keep your tasks in order</div>
-        <form>
+        <form id="register-form">
+            <div id="alert-user"></div>
             <div id="username-text">Username</div>
-            <input type="text" id="username-field">
+            <input type="text" id="username-field" name="username">
+            <div id="alert-pass"></div>
             <div id="password-text">Password</div>
-            <input type="password" id="password-field">
+            <input type="password" id="password-field" name="password">
+            <button id="login-button" type="submit">Sign in</button>
         </form>
-        <a href="#login" id="login-button">Sign in</a>
-        <a href="/login.html" id="register">Do you have an account?</a>
+        <a href="login.html" id="register">Do you have an account?</a>
     </div>
+    <script src="submit-register.js"></script>
 </body>
 </html> 

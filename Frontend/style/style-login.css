@@ -16,6 +16,7 @@
     width: 20%;
     height: 15%;
     margin-top: 5%;
+    margin-bottom: 10%;
 }
 #username-text{
     margin-top: 10%;
@@ -36,6 +37,11 @@
     font-size: 25px;
     margin-bottom: 10px;
 }
+#alert{
+    color: red;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
 #password-field{
     background-color: #09090B;
     color: #ffffff;
@@ -52,6 +58,7 @@
     font-size: 30px;
     text-decoration: none;
     margin: 20%;
+    margin-top: 40%;
     margin-bottom: 5%;
     height: 40px;
     width: 70%;

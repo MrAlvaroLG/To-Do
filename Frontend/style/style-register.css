@@ -31,7 +31,16 @@
     font-family: "Changa One", sans-serif;
     margin-top: none;
     width: 100%;
-
+}
+#alert-user{
+    color: red;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+#alert-pass{
+    color: red;
+    font-size: 15px;
+    margin-bottom: 10px;
 }
 #username-text{
     width: 50%;

@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { response } from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 
@@ -9,13 +9,43 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000
 
+class responss{
+    user_validation:    boolean;
+    user_message:       string;
+    pass_validation:    boolean;
+    pass_message:       string; 
+    constructor(uv=false, um="", pv=false, pm=""){
+        this.user_message=um;
+        this.user_validation=uv;
+        this.pass_message=pm;
+        this.pass_validation=pv;
+    }
+}
+
+
 app.post('/auth', function(req, res) {
-    console.log(req.body)
-    const result = valid_pass(req.body.password);
-    if (!result.valid) {
-        res.status(400).send(result.message);
-    } 
+    const result_pass = valid_pass(req.body.password);
+    const result_user = valid_user(req.body.username);
+    let resp = new responss();
+    resp.user_validation= result_user.valid;
+    resp.pass_validation= result_pass.valid;
+    resp.user_message= result_user.message;
+    resp.pass_message= result_pass.message;
+    res.status(400).send(resp);
 });
+
+function valid_user(username:string){
+    if (username.length > 8) {
+        return { valid: false, message: 'Username must have at most 8 characters' };
+    }
+    if (!/[a-z]/.test(username)) {
+        return { valid: false, message: 'Username must contain at least one lowercase letter' };
+    }
+    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(username)) {
+        return { valid: false, message: 'Username must not contain any symbols' };
+    }
+    return { valid: true, message: 'Username is valid' };
+}
 
 function valid_pass(pass:string){
     if (pass.length < 8) {
