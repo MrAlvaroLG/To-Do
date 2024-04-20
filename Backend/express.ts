@@ -9,29 +9,10 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000
 
-class responss{
-    user_validation:    boolean;
-    user_message:       string;
-    pass_validation:    boolean;
-    pass_message:       string; 
-    constructor(uv=false, um="", pv=false, pm=""){
-        this.user_message=um;
-        this.user_validation=uv;
-        this.pass_message=pm;
-        this.pass_validation=pv;
-    }
-}
-
-
 app.post('/auth', function(req, res) {
     const result_pass = valid_pass(req.body.password);
     const result_user = valid_user(req.body.username);
-    let resp = new responss();
-    resp.user_validation= result_user.valid;
-    resp.pass_validation= result_pass.valid;
-    resp.user_message= result_user.message;
-    resp.pass_message= result_pass.message;
-    res.status(400).send(resp);
+    res.status(400).send({result_user, result_pass});
 });
 
 function valid_user(username:string){

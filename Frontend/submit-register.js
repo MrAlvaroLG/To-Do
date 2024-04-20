@@ -10,13 +10,14 @@ async function sendData() {
                 "Content-Type": "application/json",
             }
         });
-        if(!resoponse.user_validation){
-            document.getElementById("alert-user").innerHTML = response.user_message
+        const json=await response.json();
+        if(!json.result_user.valid){
+            document.getElementById("alert-user").innerHTML = json.result_user.message
         }
-        if(!resoponse.pass_validation){
-            document.getElementById("alert-pass").innerHTML = response.pass_message
+        if(!json.result_pass.valid){
+            document.getElementById("alert-pass").innerHTML = json.result_pass.message
         }
-        if(resoponse.user_validation && response.pass_validation){
+        if(json.result_user.valid && json.result_pass.valid){
             document.getElementById("alert-pass").innerHTML = "";
             document.getElementById("alert-user").innerHTML = "";
             window.location.href = "index.html";
