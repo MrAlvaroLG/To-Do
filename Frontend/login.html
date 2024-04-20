@@ -9,14 +9,15 @@
 <body style="background-color: #09090B; color: #ffffff;">
     <div class="login-card">
         <img src="images/Log-face-predeterminated.png" alt="logface-predeterminated" id="log-image">
-        <form>
+        <form id="login-form">
             <div id="username-text">Username</div>
-            <input type="text" id="username-field">
+            <input type="text" id="username-field" name="username">
             <div id="password-text">Password</div>
-            <input type="password" id="password-field">
+            <input type="password" id="password-field" name="password">
+            <button id="login-button" type="submit">Login</button>
         </form>
-        <a href="#login" id="login-button">Login</a>
         <a href="/register.html" id="register">Doesn't have an account?</a>
     </div>
+    <script src="submit-login.js"></script>
 </body>
 </html> 
