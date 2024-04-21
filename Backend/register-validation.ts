@@ -8,6 +8,7 @@ app.use(cors())
 app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000
+const mongoose = require('./mongodb')
 
 app.post('/auth', function(req, res) {
     const result_pass = valid_pass(req.body.password);
@@ -15,10 +16,9 @@ app.post('/auth', function(req, res) {
     res.status(400).send({result_user, result_pass});
 });
 
+app.use(mongoose)
+
 function valid_user(username:string){
-    if (username.length > 8) {
-        return { valid: false, message: 'Username must have at most 8 characters' };
-    }
     if (!/[a-z]/.test(username)) {
         return { valid: false, message: 'Username must contain at least one lowercase letter' };
     }
@@ -45,5 +45,6 @@ function valid_pass(pass:string){
 }
 
 app.listen(port, () =>{
+    console.log("server andando")
     //http://localhost:3000
 })
