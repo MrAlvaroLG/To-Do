@@ -26,6 +26,7 @@ async function sendData() {
             document.getElementById("alert-pass").innerHTML = json.result_pass.message
         }
         if(json.result_user.valid && json.result_pass.valid){
+            document.getElementById("alert-pass").innerHTML = "";
             const json_db_validation = await response_db_validation.json();
             if(json_db_validation.message === "User already exists"){
                 document.getElementById("alert-user").innerHTML = json_db_validation.message
@@ -36,7 +37,9 @@ async function sendData() {
                 window.location.href = "index.html";
             }
         }
-    } catch (e) {console.error(e);}
+    } catch (e) {
+        console.error(e);
+    }
 }
 
 form.addEventListener("submit", (event) => {
