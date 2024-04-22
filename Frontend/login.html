@@ -8,16 +8,19 @@
 </head> 
 <body style="background-color: #09090B; color: #ffffff;">
     <div class="login-card">
-        <img src="images/Log-face-predeterminated.png" alt="logface-predeterminated" id="log-image">
-        <form id="login-form">
+        <div id="title">To-Do</div>
+        <form id="user-form">
             <div id="username-text">Username</div>
             <input type="text" id="username-field" name="username">
+            <div id="alert-user"></div>
             <div id="password-text">Password</div>
-            <div id="alert"></div>
             <input type="password" id="password-field" name="password">
-            <button id="login-button" type="submit">Login</button>
+            <div id="alert-pass"></div>
+            <button id="login-button" type="submit">Sign in</button>
         </form>
         <a href="register.html" id="register">Doesn't have an account?</a>
     </div>
+    <script src="form-validation.js"></script>
+    <script src="submit-login.js"></script>
 </body>
 </html> 

@@ -8,8 +8,19 @@
     height: 80%;
     border-radius: 40px;
     font-family: "Changa One", sans-serif;
-    background-color: #09090B;
+    background-color: #141414;
     border: 2px solid #ffffff;
+}
+#title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-family: "Changa One", sans-serif;
+    width: 30%;
+    height: 15%;
+    margin-top: 2.5%;
+    margin-bottom: none;
 }
 
 #log-image{
@@ -17,6 +28,16 @@
     height: 15%;
     margin-top: 5%;
     margin-bottom: 10%;
+}
+#alert-user{
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
+}
+#alert-pass{
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
 }
 #username-text{
     margin-top: 10%;
@@ -29,17 +50,17 @@
     outline: none;
     font-family: "Changa One", sans-serif;
     font-size: 25px;
-    border: none;
-    border-bottom: 2px solid #ffffff;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
 }
 #password-text{
+    width: 50%;
+    justify-content: left;
     margin-top: 10%;
     font-size: 25px;
-    margin-bottom: 10px;
-}
-#alert{
-    color: red;
-    font-size: 15px;
+    margin-top: 50px;
     margin-bottom: 10px;
 }
 #password-field{
@@ -48,8 +69,10 @@
     outline: none;
     font-family: "Changa One", sans-serif;
     font-size: 25px;
-    border: none;
-    border-bottom: 2px solid #ffffff;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
 }
 #login-button{
     display: flex;
@@ -57,16 +80,16 @@
     justify-content: center;
     font-size: 30px;
     text-decoration: none;
-    margin: 20%;
-    margin-top: 40%;
+    margin: auto;
+    margin-top: 120px;
     margin-bottom: 5%;
     height: 40px;
-    width: 70%;
+    width: 100%;
     background-color: #09090B;
     color: #ffffff;
     border: 1px solid #ffffff;
     border-radius: 10px;
-}
+}   
 
 #login-button:hover{
     background-color: #ffffff;

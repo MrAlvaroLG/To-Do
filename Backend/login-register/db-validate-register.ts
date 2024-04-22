@@ -11,12 +11,8 @@ app.use(cors())
 app.use(bodyParser.json());
 
 mongoose.connect(url)
-    .then(() => {
-    console.log('Conexión establecida con la base de datos.');
-    })
-    .catch(error => {
-    console.error('Error al conectar a la base de datos:', error);
-    });
+    .then(() => {console.log("Connection established with the database");})
+    .catch(error => {console.error("Failed to connect to database", error);});
 
 const User = new mongoose.Schema({
     username: String,
@@ -25,7 +21,7 @@ const User = new mongoose.Schema({
 
 const user = mongoose.model('user', User, 'users');
 
-router.post('/register', function(req, res) { 
+router.post('/authenticate', function(req, res) { 
     const user_name=req.body.username;
     const user_pass=req.body.password;
     const user_data = new user({
@@ -34,15 +30,15 @@ router.post('/register', function(req, res) {
     })
     user.findOne({ username : user_name})
         .then(find_user => {
-            if(find_user){res.send({message: "User already exists"})} 
+            if(find_user)   res.status(409).send({description: "User Invalid"})
             else{
                 user_data.save()
-                    .then(saved_user => {console.log("User saved successfully")})
-                    .catch(error =>{console.log("Error saving user")});
-                res.send({message: "User created successfully"})
+                    .then(() => {console.log("User added to database")})
+                    .catch(error =>{console.error("Error saving user", error)});
+                    res.status(201).send({description: "User Passed"})
             }
         })
-        .catch(error =>{console.log("Error finding user in database")});
+        .catch(error =>{console.error("Error finding user in database"), error});
 });
 
 module.exports = router

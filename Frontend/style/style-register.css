@@ -8,7 +8,7 @@
     height: 80%;
     border-radius: 40px;
     font-family: "Changa One", sans-serif;
-    background-color: #09090B;
+    background-color: #141414;
     border: 2px solid #ffffff;
 }
 
@@ -35,12 +35,12 @@
 #alert-user{
     color: red;
     font-size: 15px;
-    margin-bottom: 10px;
+    margin-top: 5px;
 }
 #alert-pass{
     color: red;
     font-size: 15px;
-    margin-bottom: 10px;
+    margin-top: 5px;
 }
 #username-text{
     width: 50%;
@@ -55,14 +55,17 @@
     outline: none;
     font-family: "Changa One", sans-serif;
     font-size: 25px;
-    border: none;
-    border-bottom: 2px solid #ffffff;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
 }
 #password-text{
     width: 50%;
     justify-content: left;
     margin-top: 10%;
     font-size: 25px;
+    margin-top: 50px;
     margin-bottom: 10px;
 }
 #password-field{
@@ -71,8 +74,10 @@
     outline: none;
     font-family: "Changa One", sans-serif;
     font-size: 25px;
-    border: none;
-    border-bottom: 2px solid #ffffff;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
 }
 #login-button{
     display: flex;
@@ -80,10 +85,11 @@
     justify-content: center;
     font-size: 30px;
     text-decoration: none;
-    margin: 20%;
+    margin: auto;
+    margin-top: 90px;
     margin-bottom: 5%;
     height: 40px;
-    width: 70%;
+    width: 100%;
     background-color: #09090B;
     color: #ffffff;
     border: 1px solid #ffffff;
