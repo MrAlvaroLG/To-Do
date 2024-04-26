@@ -8,5 +8,5 @@ export const dbConfig = {
     password: '22461016',
 }
 
-await mongoose.connect(dbConfig.url);
+mongoose.connect(dbConfig.url);
     console.log("Connection established with the database");
