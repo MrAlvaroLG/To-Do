@@ -1,4 +1,4 @@
-export function PasswordValidation(password): boolean {
+export function PasswordValidation(password: string): boolean {
     if (password.length < 8) return false;
     if (!/[a-z]/.test(password)) return false;
     if (!/[A-Z]/.test(password)) return false;
@@ -6,7 +6,7 @@ export function PasswordValidation(password): boolean {
     return true;
 }
 
-export function UsernameValidation(username): boolean {
+export function UsernameValidation(username: string): boolean {
     if (!/[a-z]/.test(username)) return false;
     if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(username)) return false;
     return true;
