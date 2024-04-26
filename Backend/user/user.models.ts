@@ -23,5 +23,3 @@ export const UserSchema = new Schema<User & Document>({
 
 export default model<User & Document>('User', UserSchema, dbConfig.UserDataCollection);
 
-
-

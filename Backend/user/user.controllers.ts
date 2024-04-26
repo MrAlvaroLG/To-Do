@@ -3,6 +3,8 @@ import { UserService } from './user.services'
 import { UserData } from './user.models'
 import cors from 'cors'
 import bodyParser from 'body-parser'
+import mongoose from 'mongoose'
+import { dbConfig } from './db.config'
 
 const app = express()
 
@@ -16,7 +18,7 @@ export class UserController {
     constructor() { this.userService = new UserService(); }
 
     public async CreateUser(req: Request, res: Response) {
-        console.log("a")
+        //await mongoose.connect(dbConfig.url);
         const user = new UserData(req.body.name, req.body.password);
         if (await this.userService.validateUserData(user)) {
             const result = await this.userService.createUser(user);
