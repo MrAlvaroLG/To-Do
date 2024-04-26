@@ -6,9 +6,6 @@ import { dbConfig } from './db.config';
 export class UserService{
     async createUser(UserData: User): Promise<{ statusCode: number, message: string }> {
         try {
-            await mongoose.connect(dbConfig.url);
-                console.log("Connection established with the database");
-
             const existingUser = await userModel.findOne({ username: UserData.username });
                 if (existingUser) return { statusCode: 409, message: "User already exists" };
 

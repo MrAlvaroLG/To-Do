@@ -18,7 +18,6 @@ export class UserController {
     constructor() { this.userService = new UserService(); }
 
     public async CreateUser(req: Request, res: Response) {
-        //await mongoose.connect(dbConfig.url);
         const user = new UserData(req.body.name, req.body.password);
         if (await this.userService.validateUserData(user)) {
             const result = await this.userService.createUser(user);
