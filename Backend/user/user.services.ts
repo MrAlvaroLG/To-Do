@@ -1,33 +1,26 @@
 import mongoose from 'mongoose';
 import { PasswordValidation, UsernameValidation } from './user.data.validation'
 import userModel, { User, UserData } from './user.models';
-
+import { dbConfig } from './db.config';
 
 export class UserService{
     async createUser(UserData: User): Promise<{ statusCode: number, message: string }> {
-        console.log("a")
-        userModel.create(UserData);
-        const user = await userModel.create(UserData);
-        const url = 'mongodb+srv://alvarolgdeveloper:22461016@to-do.gnk8fmb.mongodb.net/To-Do?retryWrites=true&w=majority'
-        
-        mongoose.connect(url)
-            .then(() => { console.log("Connection established with the database"); })
-            .catch(error => { console.error("Failed to connect to database", error); });
-        
-        let result: { statusCode: number, message: string } = { statusCode: 500, message: "Internal Server Error" };
-        userModel.findOne({ username: UserData.username })
-            .then(find_user => {
-                if (find_user) result = { statusCode: 409, message: "User already exists" };
-                else {
-                    user.save()
-                        .then(() => { console.log("User added to database") })
-                        .catch(error => { console.error("Erro   r saving user", error) });
-                    result = { statusCode: 201, message: "User created successfully" };
-                }
-                return result;
-            })
-            .catch(error => { console.error("Error finding user in database"), error });
-        return Promise.resolve(result);
+        try {
+            await mongoose.connect(dbConfig.url);
+                console.log("Connection established with the database");
+
+            const existingUser = await userModel.findOne({ username: UserData.username });
+                if (existingUser) return { statusCode: 409, message: "User already exists" };
+
+            const user = new userModel(UserData);
+                await user.save();
+                console.log("User added to database");
+                return { statusCode: 201, message: "User created successfully" };
+
+        } catch (error) {
+            console.error("Error saving user", error);
+            return { statusCode: 500, message: "Internal Server Error" };
+        }
     }
 
     async validateUserData(user: UserData): Promise<boolean> {
