@@ -3,8 +3,7 @@ import { UserService } from './user.services'
 import { UserData } from './user.models'
 import cors from 'cors'
 import bodyParser from 'body-parser'
-import mongoose from 'mongoose'
-import { dbConfig } from './db.config'
+const bcrypt = require("bcrypt");
 
 const app = express()
 
@@ -20,6 +19,10 @@ export class UserController {
     public async CreateUser(req: Request, res: Response) {
         const user = new UserData(req.body.username, req.body.password);
         if (await this.userService.validateUserData(user)) {
+            /* Hash password */
+            const hash = bcrypt.hashSync(user.password, 5);
+            user.password=hash
+            /*______________ */
             const result = await this.userService.createUser(user);
             if (result.statusCode === 409) res.status(409).send({ description: "User already exists" });
             else res.status(201).send({ description: "User created successfully" });
