@@ -1,10 +1,12 @@
 import mongoose from 'mongoose';
 import {DataValidation} from './user.data.validation'
 import userModel, { User, UserData } from './user.models';
-const bcrypt = require("bcrypt");
+import bcrypt from "bcrypt";
 
 export class UserService{
     async createUser(UserData: User): Promise<{ statusCode: number, message: string }> {
+        const hash = bcrypt.hashSync(UserData.password, 5);
+        UserData.password=hash
         try {
             const existingUser = await userModel.findOne({ username: UserData.username });
                 if (existingUser) return { statusCode: 409, message: "User already exists" };
@@ -21,11 +23,10 @@ export class UserService{
     }
 
     async ValidateCredentials(UserData: User): Promise<{ statusCode: number, message: string }> {
-        console.log(UserData.username)
-        console.log(UserData.password)
         try {
             const userCredentials = await userModel.findOne({username: UserData.username})
-            const passCredentials = await bcrypt.compare(UserData.password, userCredentials?.password)
+            if(!userCredentials) return { statusCode: 401, message: "User does not exist" };
+            const passCredentials = await bcrypt.compare(UserData.password, userCredentials.password)
             if(userCredentials && passCredentials) return {statusCode: 200, message: "User Authenticated"}
             return {statusCode: 401, message: "Unauthorized User"}
         } catch(error){

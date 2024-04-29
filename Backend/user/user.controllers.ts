@@ -19,9 +19,6 @@ export class UserController {
     public async CreateUser(req: Request, res: Response) {
         const user = new UserData(req.body.username, req.body.password);
         if (await this.userService.validateUserData(user)) {
-            const hash = bcrypt.hashSync(user.password, 5);
-            user.password=hash
-
             const result = await this.userService.createUser(user);
             if (result.statusCode === 409) res.status(409).send({ description: "User already exists" });
             else res.status(201).send({ description: "User created successfully" });
