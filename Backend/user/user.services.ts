@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import { PasswordValidation, UsernameValidation } from './user.data.validation'
+import {DataValidation} from './user.data.validation'
 import userModel, { User, UserData } from './user.models';
-import { dbConfig } from './db.config';
+const bcrypt = require("bcrypt");
 
 export class UserService{
     async createUser(UserData: User): Promise<{ statusCode: number, message: string }> {
@@ -20,8 +20,22 @@ export class UserService{
         }
     }
 
+    async ValidateCredentials(UserData: User): Promise<{ statusCode: number, message: string }> {
+        console.log(UserData.username)
+        console.log(UserData.password)
+        try {
+            const userCredentials = await userModel.findOne({username: UserData.username})
+            const passCredentials = await bcrypt.compare(UserData.password, userCredentials?.password)
+            if(userCredentials && passCredentials) return {statusCode: 200, message: "User Authenticated"}
+            return {statusCode: 401, message: "Unauthorized User"}
+        } catch(error){
+            console.error("Error validating credentials", error);
+            return { statusCode: 500, message: "Internal Server Error" };
+        }
+    }
+
     async validateUserData(user: UserData): Promise<boolean> {
-        if(!UsernameValidation(user.username) || !PasswordValidation(user.password))return false;
-        return true;
+        if(DataValidation(user.username, user.password))return true;
+        return false;
     }
 }
