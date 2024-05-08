@@ -8,16 +8,29 @@
 </head> 
 <body style="background-color: #09090B; color: #ffffff;">
     <nav class="navigation-bar">
-        <div class="left-partof-navbar">
+        <div class="LeftNavbar">
             <h1 id="title">To-Do</h1>
-            <a href="#New_note" id="new-note">+</a>
         </div>
-        <a href="#Calendar" id="calendar">Calendar</a>
-        <a href="#User" id="user"><div>User</div></a>
+        <div class="RightNavbar">
+            <div class="DateButton">
+                <button id="ArrowLeft"> ◀ </button>
+                <button id="date"></button>
+                <button id="ArrowRight"> ▶ </button>
+            </div>
+            <div class="UserButton">
+                <a href="#User" id="user"><div>User</div></a>
+            </div>
+        </div>
     </nav>
-    <div class="work-area"> 
-        <div class="left-bar"></div>
-        <div class="right-bar"></div>
+    <div class="workArea"> 
+        <div class="LeftBar">
+            <div id="TaskList">
+                <div id="Tasks">Tasks</div>
+                <button id="NewTask">+</button>
+            </div>
+        </div>
+        <div class="RightBar"></div>
     </div>
+    <script src="./index/date.js"></script>
 </body>
 </html> 

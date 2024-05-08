@@ -1,86 +1,114 @@
 .navigation-bar{
-    display: flex;
+    display: flex;  
+    align-content: center;
     align-items: center;
-    justify-content: center;
     flex-direction: row;
-    width: 100%;
     height: 50px;
     font-family: "Changa One", sans-serif;
     font-size: 30px;
-    border-bottom: 2px solid #ffffff ;
 }
 
-.left-partof-navbar{
+.LeftNavbar{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+
+.RightNavbar{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: 100%;
+}
+
+.DateButton{
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.UserButton{
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+#date{
+    font-family: "Changa One", sans-serif;
+    font-size: 20px;
+    background-color: #09090B;
+    border: 0;
+    color: #ffffff
+}
+#ArrowLeft{
+    font-family: "Changa One", sans-serif;
+    font-size: 20px;
+    background-color: #09090B;
+    border: 0;
+    color: #ffffff
+}
+#ArrowRight{
+    font-family: "Changa One", sans-serif;
+    font-size: 20px;
+    background-color: #09090B;
+    border: 0;
+    color: #ffffff
+}
+#ArrowLeft:hover{
+    border-right: 1px solid #ffffff;
+    border-radius: 3px;
+}
+#ArrowRight:hover{
+    border-left: 1px solid #ffffff;
+    border-radius: 3px;
+}
+#user{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.WorkArea{
+    font-family: "Changa One", sans-serif;
+    margin-top: 15px;
+    display: flex;  
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 90%;
+}
+
+.LeftBar{
+    width: 30%;
+    height: 100%;
+    border: 2px solid #ffffff;
+    border-top-right-radius: 40px;
+}
+.RightBar{
+    width: 100%;
+    height: 100%;
+}
+
+#TaskList{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: 30%;
+    align-content: center;
+    margin-bottom: 15px;
 }
-
-#title{
-    width: 70%;
-    margin-left: 10%;
+#Tasks{
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 30px;
+    margin-right: auto;
 }
-
-#new-note{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10%;
-    height: 35px;
-    width: 35px;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-#new-note:hover{
-    border-radius: 50%;
-    background-color: #ffffff;
-    color: #09090B;
-}
-
-#calendar{
-    padding: 1px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 7%;
-    margin-right: 100px;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-#calendar:hover{
-    border-radius: 10px;
-    background-color: #ffffff;
-    color: #09090B;
-}
-
-
-#user{
+#NewTask{
+    font-family: "Changa One", sans-serif;
+    border-radius: 40px;
+    margin-top: 10px;
+    border: 0;
+    height: 40px;
+    width: 40px;
+    font-size: 30px;
+    align-self: flex-end;
     margin-left: auto;
-    margin-right: 20px;
-    justify-self: end;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.work-area{
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-auto-rows: 100%;
-    height: 100%;
-}
-.left-bar{
-    height: 100%;
-    border: 2px solid #ffffff;
-    border-top: none;
-}
-
-.right-bar{
-    height: 100%;
-    border: 2px solid #ffffff;
-    border-left: none;
-    border-top: none;
+    margin-right: 40px;
 }
