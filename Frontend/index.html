@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Press+Start+2P&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <link href="style/style-main.css" rel="stylesheet" type="text/css" />
+    <link href="style/style-popup.css" rel="stylesheet" type="text/css" />
 </head> 
 <body style="background-color: #09090B; color: #ffffff;">
     <nav class="navigation-bar">
@@ -35,15 +36,15 @@
 
     <dialog id="UserAdministration">
         <div id="UserInfo">
-            <img src="./images/Log-face-predeterminated.png" alt="" id="UserAdminImg">
+            <img src="./images/Log-face-popup.png" alt="" id="UserAdminImg">
             <div id="UserName">Username</div>
             <button id="ClosePU">X</button>
         </div>
         <div id="UserActions">
-            <button>Change Username</button>
-            <button>Change Password</button>
-            <button>Delete Account</button>
-        </div>
+            <button id="ChangeUsername">Change Username</button>
+            <button id="ChangePassword">Change Password</button>
+            <button id="DeleteAccount">Delete Account</button>
+        </div>cursor: pointer;
     </dialog>
 
     <script src="./popup/popup.js"></script>

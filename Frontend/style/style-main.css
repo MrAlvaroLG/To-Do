@@ -54,11 +54,13 @@
     color: #ffffff
 }
 #ArrowLeft:hover{
-    border-right: 1px solid #ffffff;
+    transition: 100ms;
+    border-right: 3px solid #ffffff;
     border-radius: 3px;
 }
 #ArrowRight:hover{
-    border-left: 1px solid #ffffff;
+    transition: 100ms;
+    border-left: 3px solid #ffffff;
     border-radius: 3px;
 }
 #User{
@@ -73,10 +75,10 @@
     color: #ffffff;
 }
 
-#UserAdminImg{
-    width: 50px;
-    height: 50px;
+button:hover{
+    cursor: pointer;
 }
+
 #UserImage{
     margin-left: 20px;
     width: 50px;
@@ -117,8 +119,11 @@
     font-size: 30px;
     margin-right: auto;
 }
+
 #NewTask{
     font-family: "Changa One", sans-serif;
+    background-color: #09090B;
+    color: #ffffff;
     border-radius: 40px;
     margin-top: 10px;
     border: 0;
@@ -128,4 +133,10 @@
     align-self: flex-end;
     margin-left: auto;
     margin-right: 40px;
+}
+
+#NewTask:hover{
+    transition: 0.2s;
+    background-color: #ffffff;
+    color: #09090B;
 }
