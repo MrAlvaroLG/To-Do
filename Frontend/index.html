@@ -17,9 +17,10 @@
                 <button id="date"></button>
                 <button id="ArrowRight"> ▶ </button>
             </div>
-            <div class="UserButton">
-                <a href="#User" id="user"><div>User</div></a>
-            </div>
+            <button id="User">
+                User
+                <img src="./images/Log-face-predeterminated.png" alt="" id="UserImage">
+            </button>
         </div>
     </nav>
     <div class="workArea"> 
@@ -31,6 +32,21 @@
         </div>
         <div class="RightBar"></div>
     </div>
+
+    <dialog id="UserAdministration">
+        <div id="UserInfo">
+            <img src="./images/Log-face-predeterminated.png" alt="" id="UserAdminImg">
+            <div id="UserName">Username</div>
+            <button id="ClosePU">X</button>
+        </div>
+        <div id="UserActions">
+            <button>Change Username</button>
+            <button>Change Password</button>
+            <button>Delete Account</button>
+        </div>
+    </dialog>
+
+    <script src="./popup/popup.js"></script>
     <script src="./index/date.js"></script>
 </body>
 </html> 

@@ -61,9 +61,26 @@
     border-left: 1px solid #ffffff;
     border-radius: 3px;
 }
-#user{
-    text-decoration: none;
+#User{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    font-family: "Changa One", sans-serif;
+    background-color: #09090B;
+    font-size: 30px;
+    border: none;
     color: #ffffff;
+}
+
+#UserAdminImg{
+    width: 50px;
+    height: 50px;
+}
+#UserImage{
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
 }
 
 .WorkArea{

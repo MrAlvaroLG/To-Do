@@ -29,6 +29,7 @@
     margin-top: 5%;
     margin-bottom: 10%;
 }
+
 #alert-user{
     color: red;
     font-size: 15px;
@@ -73,6 +74,7 @@
     padding-left: 10px;
     border-radius: 10px;
 }
+
 #login-button{
     display: flex;
     align-items: center;
