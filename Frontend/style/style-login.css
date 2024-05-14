@@ -5,17 +5,18 @@
     margin-top: 5%;
     margin-left: 35%;
     margin-right: 35%;
-    height: 80%;
+    width: 25%;
+    height: 75%;
     border-radius: 40px;
     font-family: "Changa One", sans-serif;
-    background-color: #141516;
+    background-color: #1A1A1A;
     border: 2px solid #ffffff;
 }
 #title{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 60px;
+    font-size: 50px;
     font-family: "Changa One", sans-serif;
     width: 30%;
     height: 15%;
@@ -31,11 +32,13 @@
 }
 
 #alert-user{
+    transition: 0.5s;
     color: red;
     font-size: 15px;
     margin-top: 5px;
 }
 #alert-pass{
+    transition: 0.5s;
     color: red;
     font-size: 15px;
     margin-top: 5px;
@@ -73,9 +76,12 @@
     padding: 5px;
     padding-left: 10px;
     border-radius: 10px;
+    border: 2px solid #ffffff;
 }
 
 #login-button{
+    padding: 10px;
+    font-family: "Changa One", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,7 +90,6 @@
     margin: auto;
     margin-top: 120px;
     margin-bottom: 5%;
-    height: 40px;
     width: 100%;
     background-color: #09090B;
     color: #ffffff;
@@ -93,6 +98,7 @@
 }   
 
 #login-button:hover{
+    transition: 0.5s;
     background-color: #ffffff;
     color: #09090B;
 }
