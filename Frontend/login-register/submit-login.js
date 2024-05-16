@@ -10,7 +10,12 @@ async function sendData() {
                 "Content-Type": "application/json",
             }
         });
-        if(response.status === 200) window.location.href = "index.html";
+        const data = await response.json();
+        if(response.status === 200) {
+            localStorage.setItem("username", data.username)
+            localStorage.setItem("token", data.token)
+            window.location.href = "index.html"
+        }
         if(response.status === 401){
             document.getElementById("alert-user").innerHTML = "Wrong Username or Password"
             document.getElementById("username-field").style.borderColor = 'red'
@@ -22,4 +27,5 @@ async function sendData() {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     sendData();
+
 });

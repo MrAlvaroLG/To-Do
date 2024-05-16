@@ -10,7 +10,12 @@ async function sendData() {
                 "Content-Type": "application/json",
             }
         });
-        if(response.status === 201) window.location.href = "index.html";
+        const data = await response.json();
+        if(response.status === 201) {
+            localStorage.setItem("username", data.username)
+            localStorage.setItem("token", data.token)
+            window.location.href = "index.html"
+        }
         if(response.status === 409){
             document.getElementById("alert-user").innerHTML = "User already exists"
             document.getElementById("username-field").style.borderColor = 'red'
