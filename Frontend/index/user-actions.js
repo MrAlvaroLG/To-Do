@@ -1,3 +1,9 @@
+document.getElementById('username').innerHTML = localStorage.getItem('username');
+document.getElementById('usernameActions').innerHTML = localStorage.getItem('username');
+
+const changePassword = document.querySelector('#ChangePassword')
+const deleteAccount = document.querySelector('#DeleteAccount')
+
 const OpenPopUp = document.querySelector("#User")
 const ClosePopUp = document.querySelector("#ClosePU")
 const PopUp = document.querySelector("#UserAdministration")
@@ -14,3 +20,4 @@ ClosePopUp.addEventListener("click", ()=>{
     body.classList.remove('blur-effect');
     body.classList.add('blur-effect-remove');
 })
+

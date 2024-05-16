@@ -44,10 +44,17 @@
             <button id="ChangeUsername">Change Username</button>
             <button id="ChangePassword">Change Password</button>
             <button id="DeleteAccount">Delete Account</button>
-        </div>cursor: pointer;
+        </div>
     </dialog>
-    <script src="./index/show.js"></script>
-    <script src="./popup/popup.js"></script>
+    <dialog id="alertChangeUsername">
+        <button id="closeChangeUsername">X</button>
+        <div id="TextChangeUsername">Enter the new username</div>
+        <form id="newUsernameForm">
+            <input type="text" id="newUsername" name="username">
+        </form>
+    </dialog>
+    <script src="./index/change-username.js"></script>
+    <script src="./index/user-actions.js"></script>
     <script src="./index/date.js"></script>
 </body>
 </html> 
