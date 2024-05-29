@@ -11,36 +11,30 @@
 </head> 
 <body style="background-color: #09090B; color: #ffffff;">
     <nav class="navigationBar">
-        <div class="leftNavbar">
-            <h1 id="title">To-Do</h1>
+        <h1 id="title">To-Do</h1>
+        <div class="dateButton">
+            <button id="left"> ◀ </button>
+            <button id="date"></button>
+            <button id="right"> ▶ </button>
         </div>
-        <div class="rightNavbar">
-            <div class="dateButton">
-                <button id="arrowLeft"> ◀ </button>
-                <button id="date"></button>
-                <button id="arrowRight"> ▶ </button>
-            </div>
-            <button id="user">
-                <div id="username">Username</div>
-                <img src="./images/Log-face-predeterminated.png" alt="" id="userImage">
-            </button>
-        </div>
+        <button class="user">
+            <div id="username">Username</div>
+            <img src="./images/Log-face-predeterminated.png" alt="" id="image">
+        </button>
     </nav>
     <div class="workArea"> 
-        <div class="LeftBar">
-            <div id="TaskList">
-                <div id="Tasks">Tasks</div>
-                <button id="NewTask">+</button>
-            </div>
+        <div id="taskList">
+            <div id="tasks">Tasks</div>
+            <button id="newTask">+</button>
         </div>
-        <div class="RightBar"></div>
+        <div class="workSpace"></div>
     </div>
 
     <div id="UserAdministration">
         <div id="UserInfo">
-            <img src="./images/Log-face-popup.png" alt="" id="UserAdminImg">
+            <img src="./images/Log-face-popup.png" alt="" id="image">
             <div id="usernameActions">Username</div>
-            <button id="ClosePU">X</button>
+            <button id="close">X</button>
         </div>
         <div id="UserActions">
             <button id="ChangeUsername">Change Username</button>
