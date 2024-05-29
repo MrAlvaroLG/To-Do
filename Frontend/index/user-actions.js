@@ -1,23 +1,19 @@
 document.getElementById('username').innerHTML = localStorage.getItem('username');
 document.getElementById('usernameActions').innerHTML = localStorage.getItem('username');
 
+const changeUsername = document.querySelector('#ChangeUsername')
 const changePassword = document.querySelector('#ChangePassword')
 const deleteAccount = document.querySelector('#DeleteAccount')
 
-const OpenPopUp = document.querySelector("#User")
-const ClosePopUp = document.querySelector("#ClosePU")
-const PopUp = document.querySelector("#UserAdministration")
+const openUserAdministration = document.querySelector("#User")
+const closeUserAdministration = document.querySelector("#ClosePU")
+const userAdministration = document.querySelector("#UserAdministration")
+const ChangeUsernameActions = document.querySelector("#ChangeUsernameActions")
 const body = document.body;
 
-OpenPopUp.addEventListener("click", ()=>{
-    PopUp.showModal();
-    body.classList.remove('blur-effect-remove');
-    body.classList.add('blur-effect');
-})
+userAdministration.style.display = 'none';
+ChangeUsernameActions.style.display = 'none';
 
-ClosePopUp.addEventListener("click", ()=>{
-    PopUp.close();
-    body.classList.remove('blur-effect');
-    body.classList.add('blur-effect-remove');
+openUserAdministration.addEventListener("click", ()=>{
+    userAdministration.style.display = 'flex';
 })
-

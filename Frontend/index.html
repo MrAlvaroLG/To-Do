@@ -4,23 +4,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Press+Start+2P&family=Teko:wght@300..700&display=swap" rel="stylesheet">
-    <link href="style/style-main.css" rel="stylesheet" type="text/css" />
-    <link href="style/style-popup.css" rel="stylesheet" type="text/css" />
+    <link href="style/index/NavigationBar.css" rel="stylesheet" type="text/css" />
+    <link href="style/index/WorkArea.css" rel="stylesheet" type="text/css" />
+    <link href="style/index/User Actions/UserActions.css" rel="stylesheet" type="text/css" />
+    <link href="style/index/User Actions/ChangeUsername.css" rel="stylesheet" type="text/css" />
 </head> 
 <body style="background-color: #09090B; color: #ffffff;">
-    <nav class="navigation-bar">
-        <div class="LeftNavbar">
+    <nav class="navigationBar">
+        <div class="leftNavbar">
             <h1 id="title">To-Do</h1>
         </div>
-        <div class="RightNavbar">
-            <div class="DateButton">
-                <button id="ArrowLeft"> ◀ </button>
+        <div class="rightNavbar">
+            <div class="dateButton">
+                <button id="arrowLeft"> ◀ </button>
                 <button id="date"></button>
-                <button id="ArrowRight"> ▶ </button>
+                <button id="arrowRight"> ▶ </button>
             </div>
-            <button id="User">
+            <button id="user">
                 <div id="username">Username</div>
-                <img src="./images/Log-face-predeterminated.png" alt="" id="UserImage">
+                <img src="./images/Log-face-predeterminated.png" alt="" id="userImage">
             </button>
         </div>
     </nav>
@@ -34,7 +36,7 @@
         <div class="RightBar"></div>
     </div>
 
-    <dialog id="UserAdministration">
+    <div id="UserAdministration">
         <div id="UserInfo">
             <img src="./images/Log-face-popup.png" alt="" id="UserAdminImg">
             <div id="usernameActions">Username</div>
@@ -45,14 +47,17 @@
             <button id="ChangePassword">Change Password</button>
             <button id="DeleteAccount">Delete Account</button>
         </div>
-    </dialog>
-    <dialog id="alertChangeUsername">
-        <button id="closeChangeUsername">X</button>
+    </div>
+    <div id="ChangeUsernameActions">
         <div id="TextChangeUsername">Enter the new username</div>
         <form id="newUsernameForm">
             <input type="text" id="newUsername" name="username">
+            <div>
+                <button>Cancel</button>
+                <button>Change</button>
+            </div>
         </form>
-    </dialog>
+    </div>
     <script src="./index/change-username.js"></script>
     <script src="./index/user-actions.js"></script>
     <script src="./index/date.js"></script>

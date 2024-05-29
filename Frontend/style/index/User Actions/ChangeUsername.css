@@ -1,0 +1,41 @@
+#ChangeUsernameActions{
+    display: flex;
+    flex-direction: column;
+    background-color: #212121;
+    border-radius: 20px;
+    color: white;
+    font-family: "Changa One", sans-serif;
+    font-size: 25px;
+}
+
+#TextChangeUsername{
+    align-self: center;
+    width: auto;
+    color: white;
+}
+
+#closeChangeUsername:hover{
+    transition: 0.3s;
+    background-color: red;
+    color: #212121;
+}
+
+#newUsernameForm{
+    display: flex;
+    align-items: center;
+    align-content:  center;
+    flex-direction: column;
+}
+
+#newUsername{
+    background-color: #09090B;
+    color: #ffffff;
+    outline: none;
+    font-family: "Changa One", sans-serif;
+    font-size: 25px;
+    margin: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
