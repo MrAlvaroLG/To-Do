@@ -20,6 +20,7 @@
     margin-right: auto;
 }
 #NewTask{
+    transition: 0.3s ease-in-out;
     font-family: "Changa One", sans-serif;
     background-color: #09090B;
     color: #ffffff;

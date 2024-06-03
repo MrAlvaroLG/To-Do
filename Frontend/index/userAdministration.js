@@ -10,7 +10,6 @@ const overlay = document.getElementById('overlay')
 user.addEventListener('click', ()=>{
     userAdministration.style.display = 'block';
     overlay.style.display='block';
-    //overlay.style.transition = '1.0s';
     overlay.style.backdropFilter = 'blur(5px)';
 })
 
@@ -20,7 +19,9 @@ closeUserAdministration.addEventListener('click', ()=>{
 })
 
 overlay.addEventListener('click', ()=>{
+    showU.style.display= 'none';
+    showP.style.display= 'none';
+    overlay.style.zIndex = 1;
     userAdministration.style.display = 'none';
     overlay.style.display='none';
 })
-
